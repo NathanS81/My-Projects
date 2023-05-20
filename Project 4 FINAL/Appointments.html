@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Appointment Tracker</title>
+    <style>
+      body {
+        background-color: #c7ecc7; /* mint green */
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 20px;
+      }
+      th, td {
+        text-align: left;
+        padding: 8px;
+      }
+      th {
+        background-color: #5cb85c; /* dark green */
+        color: white;
+      }
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+      input[type=text] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+      }
+      input[type=submit] {
+        background-color: #5cb85c; /* dark green */
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        float: right;
+      }
+      input[type=submit]:hover {
+        background-color: #4CAF50;
+      }
+      .delete-btn {
+        background-color: #ff3333; /* red */
+        color: white;
+        border: none;
+        padding: 6px 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 12px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .delete-btn:hover {
+        background-color: #e60000;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Appointment Managment Window</h1>
+    <form>
+      <label for="date">Date (mm/dd/yyyy):</label>
+      <input type="text" id="date" name="date" required><br>
+
+      <label for="time">Time (hh:mm AM/PM):</label>
+      <input type="text" id="time" name="time" required><br>
+
+      <label for="description">Description:</label>
+      <input type="text" id="description" name="description" required><br>
+
+      <input type="submit" value="Add Appointment" onclick="addAppointment(); return false;">
+    </form>
+
+    <table id="appointments">
+      <tr>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Description</th>
+        <th>Action</th>
+      </tr>
+    </table>
+
+    <script>
+      function addAppointment() {
+        // Get the values from the form
+        var date = document.getElementById("date").value;
+        var time = document.getElementById("time").value;
+        var description = document.getElementById("description").value;
+
+        // Create a new row for the table
+        var table = document.getElementById("appointments");
+        var row = table.insertRow(-1);
+
+        // Insert the values into the row
+        var dateCell = row.insertCell(0);
+        var timeCell = row.insertCell(1);
+        var descriptionCell = row.insertCell(2);
+        var actionCell = row.insertCell(3);
+        dateCell.innerHTML = date;
+        timeCell.innerHTML = time;
+        descriptionCell.innerHTML = description;
+        actionCell.innerHTML = '<button class="delete-btn" onclick="deleteAppointment(this)">Delete</button>';// Save the appointments to local storage
+    var appointments = [];
+    for (var i = 1; i < table.rows.length; i++) {
+      var appointment = {
+        date: table.rows[i].cells[0].innerHTML,
+        time: table.rows[i].cells[1].innerHTML,
+        description: table.rows[i].cells[2].innerHTML
+      };
+      appointments.push(appointment);
+    }
+    localStorage.setItem("appointments", JSON.stringify(appointments));
+
+    // Clear the form
+    document.getElementById("date").value = "";
+    document.getElementById("time").value = "";
+    document.getElementById("description").value = "";
+  }
+
+  function deleteAppointment(button) {
+    // Get the index of the row to delete
+    var table = document.getElementById("appointments");
+    var index = button.parentNode.parentNode.rowIndex;
+
+    // Remove the row from the table
+    table.deleteRow(index);
+
+    // Save the appointments to local storage
+    var appointments = [];
+    for (var i = 1; i < table.rows.length; i++) {
+      var appointment = {
+        date: table.rows[i].cells[0].innerHTML,
+        time: table.rows[i].cells[1].innerHTML,
+        description: table.rows[i].cells[2].innerHTML
+      };
+      appointments.push(appointment);
+    }
+    localStorage.setItem("appointments", JSON.stringify(appointments));
+  }
+
+  // Load the appointments from local storage
+  var appointments = JSON.parse(localStorage.getItem("appointments"));
+  if (appointments != null) {
+    var table = document.getElementById("appointments");
+    for (var i = 0; i < appointments.length; i++) {
+      var row = table.insertRow(-1);
+      var dateCell = row.insertCell(0);
+      var timeCell = row.insertCell(1);
+      var descriptionCell = row.insertCell(2);
+      var actionCell = row.insertCell(3);
+      dateCell.innerHTML = appointments[i].date;
+      timeCell.innerHTML = appointments[i].time;
+      descriptionCell.innerHTML = appointments[i].description;
+      actionCell.innerHTML = '<button class="delete-btn" onclick="deleteAppointment(this)">Delete</button>';
+    }
+  }
+</script>
+  </body>
+</html>
+```

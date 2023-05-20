@@ -1,0 +1,135 @@
+<!-- This is the Login Form | Created by Ben | April 30, 2023 -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login and Registration Form</title>
+	<style>
+		body {
+			background-color: #f1faee;
+			font-family: Arial, sans-serif;
+		}
+
+		h1 {
+			color: #457b9d;
+			text-align: center;
+			margin-top: 50px;
+		}
+
+		form {
+			background-color: #a8dadc;
+			color: #1d3557;
+			padding: 20px;
+			border-radius: 10px;
+			margin-top: 30px;
+			max-width: 400px;
+			margin-left: auto;
+			margin-right: auto;
+			box-shadow: 5px 5px 5px rgba(0,0,0,0.2);
+		}
+
+		label {
+			display: block;
+			margin-bottom: 5px;
+		}
+
+		input[type="email"], input[type="password"], input[type="text"] {
+			width: 100%;
+			padding: 10px;
+			margin-bottom: 20px;
+			border-radius: 5px;
+			border: none;
+		}
+
+		input[type="submit"] {
+			background-color: #457b9d;
+			color: #f1faee;
+			padding: 10px 20px;
+			border-radius: 5px;
+			border: none;
+			cursor: pointer;
+		}
+
+		input[type="submit"]:hover {
+			background-color: #1d3557;
+		}
+
+		.error {
+			color: red;
+			margin-bottom: 10px;
+		}
+
+		.success {
+			color: green;
+			margin-bottom: 10px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Login and Registration Form</h1>
+	<div class="container">
+		<div class="form-container">
+			<form id="login-form">
+				<h2>Login</h2>
+				<div class="error" id="login-error"></div>
+				<div class="success" id="login-success"></div>
+				<label for="email">Email:</label>
+				<input type="email" id="login-email" name="email" required>
+				<label for="password">Password:</label>
+				<input type="password" id="login-password" name="password" required>
+				<p><a href="tabs.html">Submit</a></p>
+                
+			</form>
+		</div>
+		<div class="form-container">
+			<form id="register-form">
+				<h2>Register</h2>
+				<div class="error" id="register-error"></div>
+				<div class="success" id="register-success"></div>
+				<label for="name">Name:</label>
+				<input type="text" id="register-name" name="name" required>
+				<label for="email">Email:</label>
+				<input type="email" id="register-email" name="email" required>
+				<label for="password">Password:</label>
+				<input type="password" id="register-password" name="password" required>
+				<input type="submit" value="Register">
+			</form>
+		</div>
+	</div>
+
+	<script>
+        // Login form submit handler
+        document.getElementById("login-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            let email = document.getElementById("login-email").value;
+            let password = document.getElementById("login-password").value;
+    
+            // Check if email and password are valid
+            if (email === "" || password === "") {
+                document.getElementById("login-error").innerHTML = "Please enter valid email and password";
+                document.getElementById("login-success").innerHTML = "";
+            } else {
+                document.getElementById("login-error").innerHTML = "";
+                document.getElementById("login-success").innerHTML = "Login successful!";
+                // Add code here to log the user in
+            }
+        });
+    
+        // Register form submit handler
+        document.getElementById("register-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            let name = document.getElementById("register-name").value;
+            let email = document.getElementById("register-email").value;
+            let password = document.getElementById("register-password").value;
+    
+            // Check if name, email, and password are valid
+            if (name === "" || email === "" || password === "") {
+                document.getElementById("register-error").innerHTML = "Please enter valid name, email, and password";
+                document.getElementById("register-success").innerHTML = "";
+            } else {
+                document.getElementById("register-error").innerHTML = "";
+                document.getElementById("register-success").innerHTML = "Registration successful!";
+                // Add code here to create a new account for the user
+            }
+        });
+    </script>

@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Character with skills", "Character with skills\Character with skills.pyproj", "{67245077-9F3A-4983-BC10-3CAF4C4FA068}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{67245077-9F3A-4983-BC10-3CAF4C4FA068}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67245077-9F3A-4983-BC10-3CAF4C4FA068}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {83F22F75-E4C4-4B4A-B8EC-13BE1A87131E}
+	EndGlobalSection
+EndGlobal

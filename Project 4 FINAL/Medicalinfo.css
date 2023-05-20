@@ -1,0 +1,61 @@
+
+/* Style sheet for Medicalinfo.html | made by Nathan Spears | completed April 30, 2023 */
+
+
+/* Create background color */
+body {
+    background-color: #c8e6c9;
+  }
+  
+  .card {
+    background-color: #f1f8e9;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+  }
+  
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+
+  /* Style the input boxes and action buttons */
+
+  input[type=text], select {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    margin: 0.5rem 0;
+    width: 100%;
+  }
+  
+  input[type=submit], input[type=reset] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    margin: 0.5rem 0;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover, input[type=reset]:hover {
+    background-color: #3e8e41;
+  }
+  /* The color and size of the delete-button */
+  .delete-button {
+    background-color: #f44336;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    margin-top: 1rem;
+    cursor: pointer;
+  }
+
+  /* The background color for the delete-button:hover */
+  .delete-button:hover {
+    background-color: #f44336;
+  }

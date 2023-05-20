@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="pay bill.css">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Bill Payment Page -->
+    <nav><h1>Payment</h1></nav>
+    <div id="bill-payment-page">
+        <h2>Payment</h2>
+        <form>
+          <label for="billAmount">Bill Amount:</label>
+          <input type="number" id="billAmount" name="billAmount" required>
+          
+          <label for="cardNumber">Card Number:</label>
+          <input type="tel" id="cardNumber" name="cardNumber" pattern="[0-9]{16}" maxlength="16" required>
+          
+          <label for="cardExpiration">Expiration Date:</label>
+          <input type="month" id="cardExpiration" name="cardExpiration" required>
+          
+          <label for="cardCvv">CVV:</label>
+          <input type="tel" id="cardCvv" name="cardCvv" pattern="[0-9]{3}" maxlength="3" required>
+          
+          <input type="submit" value="Pay Now">
+        </form>
+      
+      </div>
+</body>
+</html>
