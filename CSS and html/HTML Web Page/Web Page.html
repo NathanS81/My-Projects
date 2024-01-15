@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Nathan Spears</title>
+</head>
+<body>
+    <h1 style="color:red;"> My Introduction Web Page</h1>
+    <style>
+        font-style: italic;
+    </style>
+   
+    <style>
+        body {
+            background-image: url('images/background2.jpg');
+        }
+    </style>
+    <a href="https://www.linkedin.com/in/nathan-spears-3969a5242?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B9r8zL3lMTceg01XiIerDSQ%3D%3D" target="linkedIn">
+        <img src="images/linkedIn.png" style="width: 8vw; min-width: 8px;" />
+        <h1 style="font-family: monospace;">Here are my Socials:</h1>
+
+        <!-- create four text hyperlinks -->
+        <p><a href="https://www.linkedin.com/in/nathan-spears-3969a5242?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B9r8zL3lMTceg01XiIerDSQ%3D%3D">linkedIn</a></p>
+        <p><a href="https://github.com/NathanS81">github</a></p>
+        <p><a href="mailto:nathan_spears81@icloud.com">nathan_spears81@icloud.com</a></p>
+    </a>
+    <div id="clock"></div>
+
+    <script>
+        function displayClock() {
+            const clockElement = document.getElementById("clock");
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, "0");
+            const minutes = now.getMinutes().toString().padStart(2, "0");
+            const seconds = now.getSeconds().toString().padStart(2, "0");
+
+            const clockText = `${hours}:${minutes}:${seconds}`;
+
+            clockElement.textContent = clockText;
+        }
+
+        // Update the clock every second
+        setInterval(displayClock, 1000);
+
+        // Display the clock when the page loads
+        window.addEventListener("load", displayClock);
+    </script>
+    <p>
+        Hello, my name is Nathan, and I'm currently in the final stretch of my academic journey as a
+        senior at the University of Houston Downtown.
+    </p>
+    <p>
+        I'm passionate about the world of technology, and
+        I've chosen to channel that passion into pursuing a Bachelor of Science degree with a major in Computer Science.
+    </p>
+    <p>
+        Throughout my time at UHD, I've had the privilege of immersing myself in the fascinating realm of
+        computer science, where I've cultivated a deep understanding of algorithms,
+    </p>
+    <p>programming languages,
+    and the intricate architecture that powers our digital age. My coursework has not only provided me with
+    a strong foundation in the theoretical aspects
+    </p>
+    <p>of computer science but has also given me numerous opportunities
+    to apply my knowledge through hands-on projects.
+    </p>
+    <p>
+        What truly sets me apart is my unwavering commitment to continuous learning and growth in this dynamic field.
+        I've actively sought out internships and personal projects to
+    </p>
+    <p>expand my practical skills and gain real-world experience.
+    I believe that the intersection of creativity and technology is where innovation thrives,
+    and I'm excited to be part of
+    </p>
+    <p>shaping the future with my contributions.
+    </p>
+    <p>
+        As I approach graduation, I'm eagerly looking forward to leveraging my education and experiences to make a meaningful
+        impact in the world of technology. I'm open to collaboration,
+    </p>
+    <p>excited about problem-solving, and ready to embark
+    on new challenges. Let's connect and explore the possibilities together!
+    </p>
+
+</p>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Forms</title>
+</head>
+
+<body>
+    <h1>Feedback Form</h1>
+
+    <p>
+        Please fill out this form to help
+        improve my web page.
+    </p>
+
+    <!-- this tag starts the form, gives the -->
+    <!-- method of sending information and the -->
+    <!-- location of the form-processing script -->
+    <form method="post" action="mailto:nathan_spears81@icloud.com">
+        <!-- hidden inputs contain non-visual -->
+        <!-- information that will also be submitted -->
+        <input type="hidden" name="recipient"
+               value="mailto:nathan_spears81@icloud.com">
+        <input type="hidden" name="subject"
+               value="Feedback Form">
+        <input type="hidden" name="redirect"
+               value="main.html">
+
+        <!-- <input type = "text"> inserts a text field -->
+        <p>
+            <label>
+                Name:
+                <input name="name" type="text" size="25"
+                       maxlength="30">
+            </label>
+        </p>
+
+        <p>
+            <!-- input types "submit" and "reset" insert -->
+            <!-- buttons for submitting and clearing the -->
+            <!-- form's contents, respectively -->
+            <input type="submit" value="Submit">
+            <input type="reset" value="Clear">
+        </p>
+    </form>
+</body>
+</html>
+
+</body>
+</html>
